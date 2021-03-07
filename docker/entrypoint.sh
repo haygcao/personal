@@ -27,9 +27,9 @@ build_crontab_file(){
 
   if [ ${enable_unicom} ];then
     if [ -f "${config_unicom}" ];then
-      echo "*/20 6-22 * * *       node /AutoSignMachine/index.js unicom --config=${config_unicom}" >> /var/spool/cron/crontabs/root
+      echo "*/15 5-22 * * *       node /AutoSignMachine/index.js unicom --config=${config_unicom}" >> /var/spool/cron/crontabs/root
     else
-      echo "*/20 6-22 * * *       node /AutoSignMachine/index.js unicom --cookies ${cookies} --user ${user} --password ${password} --appid ${appid}" >> /var/spool/cron/crontabs/root
+      echo "*/15 5-22 * * *       node /AutoSignMachine/index.js unicom --cookies ${cookies} --user ${user} --password ${password} --appid ${appid}" >> /var/spool/cron/crontabs/root
     fi
   fi
 
