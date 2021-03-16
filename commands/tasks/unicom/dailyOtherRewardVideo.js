@@ -1,4 +1,23 @@
 var dailyOtherRewardVideo = {
+    test: async (axios, options) => {
+        // clean 6积分 30次
+        await require('./rewardVideo').doTask(axios, {
+            ...options,
+            acid: 'AC20200716103629',
+            taskId: 'ebc3223e2b384c9c9aa17bc68298db44',
+            codeId: 945719787,
+            reward_name: '全民夺宝'
+        })
+
+        // clean 北风强制大抽奖 30次
+        await require('./rewardVideo').doTask(axios, {
+          ...options,
+          acid: 'AC20200611152252',
+          taskId: '5e53d872172146b0a55c498e466a9f96',
+          codeId: 945689604,
+          reward_name: '签到小游戏得积分'
+        })
+    },
     // see https://m.jf.10010.com/jf-yuech/p/freeLoginGuess
     cleanRewardVideo: async (axios, options) => {
         // clean 4积分 30次
@@ -17,6 +36,15 @@ var dailyOtherRewardVideo = {
             taskId: '73e3907bbf9c4748b2fe9a053cee5e82',
             codeId: 945689604,
             reward_name: '签到小游戏得积分'
+        })
+
+        // clean 北风强制大抽奖 30次
+        await require('./rewardVideo').doTask(axios, {
+          ...options,
+          acid: 'AC20200611152252',
+          taskId: '5e53d872172146b0a55c498e466a9f96',
+          codeId: 945689604,
+          reward_name: '签到小游戏得积分'
         })
 
         // 抓OPPO手机
