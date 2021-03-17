@@ -364,6 +364,11 @@ var start = async (params) => {
     await require('./hfgo').doTask(request, options)
   }, taskOption)
 
+  // 话费换
+  await scheduler.regTask('unicomExchangePhoneBill', async (request) => {
+    await require('./unicomExchangePhoneBill').doTask(request, options)
+  }, taskOption)
+  
   // 首页-签到-APP下载领积分
   await scheduler.regTask('dailyDownloadApp', async (request) => {
     await require('./dailyDownloadApp').doTask(request, options)
